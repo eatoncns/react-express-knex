@@ -1,6 +1,6 @@
-import { books } from "../db/books"
+import { book } from "../db/book"
 import { db } from "../db/connection";
 
-export const findAll = async (): Promise<Array<books>> => {
-    return db.select().table('books');
+export const findAll = async (): Promise<Array<book>> => {
+    return db.select().table('book');
 }
