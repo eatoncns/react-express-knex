@@ -1,0 +1,5 @@
+{
+  "conn": "postgres://knex:knex-password@localhost/express",
+  "table": ["books"],
+  "output": "src/dbgen/books.ts"
+}
