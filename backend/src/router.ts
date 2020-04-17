@@ -16,7 +16,8 @@ class Router {
                 const result = await handler();
                 res.status(200).send(result);
             } catch(e) {
-                res.status(404).send(e.message);
+                console.log(e.message);
+                res.status(500).send();
             }
         });
     }

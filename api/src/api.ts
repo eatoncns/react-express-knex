@@ -4,11 +4,16 @@ export type api<T> = {
     path: string,
 }
 
-export const Book = t.type({
-    id: t.number,
+const Id = t.type({
+  id: t.number,
+});
+
+const BookFields = t.type({
     title: t.string,
     author: t.union([t.string, t.null])
 });
+
+export const Book = t.intersection([Id, BookFields])
 
 export const Books = t.array(Book);
 

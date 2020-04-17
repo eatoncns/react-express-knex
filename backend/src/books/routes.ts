@@ -4,10 +4,5 @@ import {router} from "../router";
 
 export const booksRouter = router();
 booksRouter.handleGet(api.books, async () => {
-    try {
-        return await BookService.findAll();
-    } catch(e) {
-        throw e;
-    }
+   return await BookService.findAll();
 });
-
