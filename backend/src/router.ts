@@ -10,9 +10,10 @@ class Router {
         this.expressRouter = express.Router();
     }
 
-    handleGet<T>(apiObject: api<T>, handler: () => Promise<T>) {
+    handleGet<Req, Res, T, U>(apiObject: api<Req, Res, T, U>, handler: () => Promise<Res>) {
         this.expressRouter.get(apiObject.path, async (req: Request, res: Response) => {
             try {
+                // TODO: io-ts request out of req
                 const result = await handler();
                 res.status(200).send(result);
             } catch(e) {
