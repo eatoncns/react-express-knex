@@ -5,7 +5,7 @@ export type api<T> = {
 }
 
 const Id = t.type({
-  id: t.number,
+  id: t.Int,
 });
 
 const BookFields = t.type({
@@ -21,3 +21,4 @@ export type booksT = api<t.TypeOf<typeof Books>>;
 export const books: booksT = {
     path: "/",
 }
+
