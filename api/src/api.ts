@@ -2,14 +2,14 @@ import * as t from "io-ts";
 
 export type api<Req, Res> = {
     path: string,
-    reqCodec: t.Decoder<unknown, Req>,
-    resCodec: t.Decoder<unknown, Res>,
+    reqCodec: t.Type<Req>,
+    resCodec: t.Type<Res>,
 }
 
 const nothing = t.type({});
 
 const Id = t.type({
-  id: t.Int,
+  id: t.number,
 });
 
 const BookFields = t.type({
