@@ -27,4 +27,5 @@ function makeApi<ReqCodec extends t.Any, ResCodec extends t.Any>(path: string, r
     return { path,  reqCodec, resCodec }
 }
 
-export const books = makeApi("/", nothing, Books);
+export const books = makeApi("/books", nothing, Books);
+export const createBook = makeApi("/books", BookFields, t.void);

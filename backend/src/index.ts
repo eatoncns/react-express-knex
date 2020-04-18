@@ -9,7 +9,7 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-app.use("/books", booksRouter.expressRouter);
+app.use(booksRouter.expressRouter);
 
 const server = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);

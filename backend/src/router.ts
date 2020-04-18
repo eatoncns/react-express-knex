@@ -23,4 +23,17 @@ class Router {
             }
         });
     }
+
+    handlePost<Req, Res>(apiObject: api<Req, Res>, handler: (_: Req) => Promise<Res>) {
+        this.expressRouter.post(apiObject.path, async (req: Request, res: Response) => {
+           try {
+               const request = await decode(apiObject.reqCodec, {...req.params, ...req.body})
+               const result = await handler(request);
+               res.status(201).send(result);
+           } catch(e) {
+               console.log(e.message);
+               res.status(500).send();
+           }
+        });
+    }
 }
