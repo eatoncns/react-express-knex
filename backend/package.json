@@ -21,7 +21,7 @@
     "helmet": "^3.22.0",
     "io-ts": "^2.2.0",
     "io-ts-promise": "^2.0.2",
-    "knex": "^0.20.13",
+    "knex": "^2.4.0",
     "pg": "^8.0.0"
   },
   "devDependencies": {
